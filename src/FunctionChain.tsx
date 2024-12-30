@@ -28,27 +28,36 @@ const FunctionChain = () => {
 
   const evaluateEquation = (equation: string, x: number): number => {
     try {
-      const jsEquation = equation
+      const formattedEquation = equation
+        .replace(/(\d)(x)/g, '$1*$2')
         .replace(/\^/g, '**')
         .replace(/x/g, x.toString());
-      return Function(`'use strict'; return (${jsEquation})`)();
+      return Function(`'use strict'; return (${formattedEquation})`)();
     } catch (error) {
-      console.error('Error evaluating equation:', error);
-      return 0;
+      console.error('Error evaluating equation:', equation, error);
+      throw new Error(`Invalid equation: ${equation}`);
     }
   };
 
   const calculateOutput = () => {
-    let currentValue = initialValue;
-    const executionOrder = [1, 2, 4, 5, 3];
+    try {
+      let currentValue = initialValue;
+      const executionOrder = [1, 2, 4, 5, 3];
 
-    for (const functionId of executionOrder) {
-      const func = functions.find((f) => f.id === functionId);
-      if (func) {
-        currentValue = evaluateEquation(func.equation, currentValue);
+      for (const functionId of executionOrder) {
+        const func = functions.find((f) => f.id === functionId);
+        if (func) {
+          currentValue = evaluateEquation(func.equation, currentValue);
+        } else {
+          throw new Error(`Function ID ${functionId} not found`);
+        }
       }
+
+      setFinalOutput(currentValue);
+    } catch (error) {
+      console.error('Error calculating output:', error);
+      setFinalOutput(0);
     }
-    setFinalOutput(currentValue);
   };
 
   useEffect(() => {
@@ -137,7 +146,7 @@ const FunctionChain = () => {
           d='M 955 390 C 935 460, 935 280, 1000 760'
           className='connection-path'
         ></path>
-        <path d='M 1172 390 H 1242' className='connection-path'></path>
+        <path d='M 1172 390 H 1255' className='connection-path'></path>
         <path d='M 855 990 H 702' className='connection-path'></path>
       </svg>
     </div>
