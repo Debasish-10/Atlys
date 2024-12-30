@@ -47,6 +47,17 @@
   color: white;
 }
 
+.input-value-text {
+  border-right: 1px solid #ffeed5;
+  width: 40%;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
 .output-box {
   position: absolute;
   right: 80px;
@@ -196,7 +207,7 @@
 }
 
 .input-junction .junction-label {
-  left: 20px;
+  left: 6px;
   transform: translateX(16px);
 }
 
@@ -207,7 +218,7 @@
 
 .junction-label {
   position: absolute;
-  bottom: -24px;
+  bottom: 0px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 14px;

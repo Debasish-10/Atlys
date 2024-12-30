@@ -79,12 +79,16 @@ const FunctionChain = () => {
     <div className='function-chain'>
       <span className='input-label'>Initial value of x</span>
       <div className='input-box'>
-        <input
-          type='number'
-          value={initialValue}
-          onChange={(e) => setInitialValue(Number(e.target.value))}
+        <div
           className='input-value'
-        />
+          contentEditable
+          suppressContentEditableWarning
+          onInput={(e) =>
+            setInitialValue(Number((e.target as HTMLDivElement).innerText))
+          }
+        >
+          <p className='input-value-text'>{initialValue}</p>
+        </div>
         <div className='input-value-junction'></div>
       </div>
       <span className='output-label'>Final Output y</span>
