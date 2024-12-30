@@ -1,0 +1,225 @@
+.function-chain {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+.input-box {
+  position: absolute;
+  left: 70px;
+  top: 363px;
+  width: 115px;
+  height: 50px;
+}
+
+.input-value {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #fb923c;
+  border-radius: 8px;
+  text-align: center;
+  outline: none;
+}
+
+.input-value-junction {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border: 2px solid #93c5fd;
+  border-radius: 50%;
+  position: relative;
+  top: -37px;
+  left: 92px;
+}
+
+.input-label {
+  position: absolute;
+  top: 335px;
+  left: 71px;
+  font-size: 14px;
+  white-space: nowrap;
+  width: 119px;
+  height: 22px;
+  background: #e29a2d;
+  border-radius: 14px;
+  text-align: center;
+  color: white;
+}
+
+.output-box {
+  position: absolute;
+  right: 80px;
+  top: 363px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 111px;
+  height: 50px;
+  border: 2px solid #22c55e;
+  border-radius: 8px;
+}
+
+.output-value-junction {
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border: 2px solid #93c5fd;
+  border-radius: 50%;
+}
+
+.output-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.output-label {
+  position: absolute;
+  top: 335px;
+  right: 80px;
+  font-size: 14px;
+  white-space: nowrap;
+  width: 119px;
+  height: 22px;
+  background: #4caf79;
+  border-radius: 14px;
+  text-align: center;
+  color: white;
+}
+
+.function-card {
+  position: absolute;
+  width: 235px;
+  height: 251px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  z-index: 1;
+}
+
+.function-card.top-left {
+  top: 128px;
+  left: 15%;
+}
+
+.function-card.top-middle {
+  top: 128px;
+  left: 40%;
+}
+
+.function-card.top-right {
+  top: 128px;
+  left: 65%;
+}
+
+.function-card.bottom-left {
+  top: 500px;
+  left: 27%;
+}
+
+.function-card.bottom-right {
+  top: 500px;
+  left: 53%;
+}
+
+.card-header {
+  color: #9ca3af;
+  margin-bottom: 16px;
+}
+
+.input-container {
+  margin-bottom: 16px;
+}
+
+.input-container label {
+  display: block;
+  font-size: 14px;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+.equation-input {
+  width: 88%;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+}
+
+.equation-input:focus {
+  border-color: #93c5fd;
+}
+
+.select-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.input-junction,
+.output-junction {
+  position: absolute;
+  bottom: 22px;
+  width: 12px;
+  height: 12px;
+  background-color: white;
+  border: 2px solid #93c5fd;
+  border-radius: 50%;
+}
+
+.input-junction {
+  left: 30px;
+  transform: translateX(-8px);
+}
+
+.output-junction {
+  right: 30px;
+  transform: translateX(8px);
+}
+
+.junction-label {
+  position: absolute;
+  font-size: 14px;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.input-junction .junction-label {
+  left: 20px;
+  transform: translateX(16px);
+}
+
+.output-junction .junction-label {
+  right: 20px;
+  transform: translateX(-50px);
+}
+
+.junction-label {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.connections-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.connection-path {
+  stroke: #93c5fd;
+  stroke-width: 3;
+  fill: none;
+}
